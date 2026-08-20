@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keshav Agarwal — Full-Stack Developer</title>
+  <meta name="description" content="Full-stack developer specializing in Next.js, TypeScript, and Indian business solutions. Creator of Lekhva ERP.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0A0A0A;
+      --card: #141414;
+      --border: #262626;
+      --text: #FAFAFA;
+      --muted: #A1A1AA;
+      --accent: #6366F1;
+      --accent-light: #818CF8;
+      --green: #22C55E;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    header {
+      padding: 4rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.3rem; }
+    header .tagline { color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--green);
+      background: rgba(34, 197, 94, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+    }
+    .status::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .social-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .social-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Section */
+    section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+    section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+    }
+
+    /* Projects */
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+    }
+    .project-card:hover { border-color: var(--accent); }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .project-header h3 { font-size: 1.15rem; }
+    .project-tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .tag-live { background: rgba(34, 197, 94, 0.15); color: var(--green); }
+    .tag-dev { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+    .project-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.8rem; }
+    .project-tech {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .project-tech span {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--accent-light);
+      border-radius: 4px;
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: var(--accent-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .project-link:hover { text-decoration: underline; }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .skill-category h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .skill-category ul {
+      list-style: none;
+    }
+    .skill-category li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 0.2rem 0;
+    }
+    .skill-category li::before {
+      content: '▸ ';
+      color: var(--accent);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .contact-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.3s;
+    }
+    .contact-item:hover { border-color: var(--accent); }
+    .contact-item .label { color: var(--muted); font-size: 0.8rem; display: block; margin-bottom: 0.3rem; }
+    .contact-item .value { font-weight: 600; font-size: 0.95rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--accent-light); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .social-links { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <div class="avatar">KA</div>
+      <h1>Keshav Agarwal</h1>
+      <p class="tagline">Full-Stack Developer • Building for Indian Businesses</p>
+      <div class="status">Available for projects</div>
+      <div class="social-links">
+        <a href="https://github.com/keshavagarwalbiz-spec">GitHub</a>
+        <a href="mailto:keshavagarwalbiz@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/">LinkedIn</a>
+        <a href="https://twitter.com/">Twitter/X</a>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section>
+      <h2>About</h2>
+      <p>I'm a full-stack developer passionate about building tools for Indian businesses. Currently building <strong>Lekhva ERP</strong> — an open-source ERP platform with Indian GST compliance, automated PDF invoicing, and double-entry accounting. I specialize in Next.js, TypeScript, and database-driven applications.</p>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2>Projects</h2>
+      <div class="project-card">
+        <div class="project-header">
+          <h3>🧾 Lekhva ERP</h3>
+          <span class="project-tag tag-dev">In Development</span>
+        </div>
+        <p>Open-source ERP for Indian SMBs with GST compliance, automated invoicing, and double-entry accounting. Aiming to be the free alternative to Tally & Zoho Books.</p>
+        <div class="project-tech">
+          <span>Next.js 14</span>
+          <span>TypeScript</span>
+          <span>Drizzle ORM</span>
+          <span>PostgreSQL</span>
+          <span>React PDF</span>
+        </div>
+        <a href="https://github.com/keshavagarwalbiz-spec/Lekhva-ERP" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <h3>🚀 Lead to Launch</h3>
+          <span class="project-tag tag-dev">In Development</span>
+        </div>
+        <p>Automated pipeline to scrape, audit, rank, and pitch local business leads. Built-in CRM for managing outreach to potential web development clients.</p>
+        <div class="project-tech">
+          <span>AI-Powered</span>
+          <span>Web Scraping</span>
+          <span>CSV CRM</span>
+          <span>Automation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <ul>
+            <li>Next.js / React</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>HTML/CSS</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>PostgreSQL</li>
+            <li>Drizzle ORM</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Tools & Other</h3>
+          <ul>
+            <li>Git / GitHub</li>
+            <li>Claude AI</li>
+            <li>Indian GST</li>
+            <li>PDF Generation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <h2>Get in Touch</h2>
+      <div class="contact-grid">
+        <a href="mailto:keshavagarwalbiz@gmail.com" class="contact-item">
+          <span class="label">Email</span>
+          <span class="value">keshavagarwalbiz@gmail.com</span>
+        </a>
+        <a href="https://github.com/keshavagarwalbiz-spec" class="contact-item">
+          <span class="label">GitHub</span>
+          <span class="value">@keshavagarwalbiz-spec</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built with ❤️ and <a href="https://claude.ai">Claude</a> &nbsp;|&nbsp; © 2026 Keshav Agarwal</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
