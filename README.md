@@ -1,8 +1,19 @@
+<p align="center">
+  <img src="assets/banner.jpg" alt="Lekhva - Modern ERP for Indian Businesses" width="100%">
+</p>
+
+<p align="center">
+  <a href="ROADMAP.md">📍 Roadmap</a> •
+  <a href="CONTRIBUTING.md">🤝 Contributing</a> •
+  <a href="SECURITY.md">🔒 Security</a> •
+  <a href="LICENSE">📄 License</a>
+</p>
+
 # 🚧 Lekhva — Under Active Development
 
 > **⚠️ This project is under active development and is NOT ready for production use.**
 
-**Lekhva** is a modern enterprise resource planning (ERP) platform built with **Next.js 14** (App Router), **Drizzle ORM**, and **PostgreSQL**. It features Indian GST compliance, automated PDF invoicing, and a double-entry accounting ledger.
+**Lekhva** is a modern, open-source enterprise resource planning (ERP) platform built for **Indian businesses**. Powered by **Next.js 14** (App Router), **Drizzle ORM**, and **PostgreSQL** — featuring Indian GST compliance, automated PDF invoicing, and a double-entry accounting ledger.
 
 ---
 
