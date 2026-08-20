@@ -1,0 +1,19 @@
+{
+  "name": "lekhva-erp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Modern ERP platform with Indian GST compliance & automated invoicing",
+  "author": "keshavagarwalbiz-spec",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm --filter @lekhva/web dev",
+    "build": "pnpm --filter @lekhva/web build",
+    "test": "pnpm --filter @lekhva/web test",
+    "db:generate": "pnpm --filter @lekhva/db generate",
+    "db:migrate": "pnpm --filter @lekhva/db migrate",
+    "lint": "pnpm --filter @lekhva/web lint"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
