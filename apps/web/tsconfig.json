@@ -38,7 +38,8 @@
   "include": [
     "src",
     "vite-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "../../docs/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
